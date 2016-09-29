@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
-    public partial class Form1 : Form
+    public partial class SharpAutoSaleForm : Form
     {
-        public Form1()
+        public SharpAutoSaleForm()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

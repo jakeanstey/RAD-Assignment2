@@ -50,9 +50,10 @@
             this.LeatherInteriorCheckBox = new System.Windows.Forms.CheckBox();
             this.StereoSystemCheckBox = new System.Windows.Forms.CheckBox();
             this.ExteriorFinishGroupBox = new System.Windows.Forms.GroupBox();
-            this.StandardRadioButton = new System.Windows.Forms.RadioButton();
-            this.PeriizedRadioButton = new System.Windows.Forms.RadioButton();
             this.CustomRadioButton = new System.Windows.Forms.RadioButton();
+            this.PeriizedRadioButton = new System.Windows.Forms.RadioButton();
+            this.StandardRadioButton = new System.Windows.Forms.RadioButton();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.AdditionalItemsGroupBox.SuspendLayout();
             this.ExteriorFinishGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +115,6 @@
             this.BasePriceLabel.Size = new System.Drawing.Size(61, 13);
             this.BasePriceLabel.TabIndex = 7;
             this.BasePriceLabel.Text = "Base Price:";
-            this.BasePriceLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // TradeInAllowanceLabel
             // 
@@ -178,6 +178,7 @@
             this.CalculateButton.TabIndex = 14;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ClearButton
             // 
@@ -187,7 +188,7 @@
             this.ClearButton.TabIndex = 15;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
-            this.ClearButton.Click += new System.EventHandler(this.button2_Click);
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // ExitButton
             // 
@@ -210,7 +211,6 @@
             this.AdditionalItemsGroupBox.TabIndex = 17;
             this.AdditionalItemsGroupBox.TabStop = false;
             this.AdditionalItemsGroupBox.Text = "Additional Items";
-            this.AdditionalItemsGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // ComputerNavigationCheckBox
             // 
@@ -221,6 +221,7 @@
             this.ComputerNavigationCheckBox.TabIndex = 2;
             this.ComputerNavigationCheckBox.Text = "Computer Navigation";
             this.ComputerNavigationCheckBox.UseVisualStyleBackColor = true;
+            this.ComputerNavigationCheckBox.CheckedChanged += new System.EventHandler(this.ComputerNavigationCheckBox_CheckedChanged);
             // 
             // LeatherInteriorCheckBox
             // 
@@ -231,6 +232,7 @@
             this.LeatherInteriorCheckBox.TabIndex = 1;
             this.LeatherInteriorCheckBox.Text = "Leather Interior";
             this.LeatherInteriorCheckBox.UseVisualStyleBackColor = true;
+            this.LeatherInteriorCheckBox.CheckedChanged += new System.EventHandler(this.LeatherInteriorCheckBox_CheckedChanged);
             // 
             // StereoSystemCheckBox
             // 
@@ -241,6 +243,7 @@
             this.StereoSystemCheckBox.TabIndex = 0;
             this.StereoSystemCheckBox.Text = "Stereo System";
             this.StereoSystemCheckBox.UseVisualStyleBackColor = true;
+            this.StereoSystemCheckBox.CheckedChanged += new System.EventHandler(this.StereoSystemCheckBox_CheckedChanged);
             // 
             // ExteriorFinishGroupBox
             // 
@@ -254,6 +257,28 @@
             this.ExteriorFinishGroupBox.TabStop = false;
             this.ExteriorFinishGroupBox.Text = "Exterior Finish";
             // 
+            // CustomRadioButton
+            // 
+            this.CustomRadioButton.AutoSize = true;
+            this.CustomRadioButton.Location = new System.Drawing.Point(7, 63);
+            this.CustomRadioButton.Name = "CustomRadioButton";
+            this.CustomRadioButton.Size = new System.Drawing.Size(60, 17);
+            this.CustomRadioButton.TabIndex = 2;
+            this.CustomRadioButton.Text = "Custom";
+            this.CustomRadioButton.UseVisualStyleBackColor = true;
+            this.CustomRadioButton.CheckedChanged += new System.EventHandler(this.CustomRadioButton_CheckedChanged);
+            // 
+            // PeriizedRadioButton
+            // 
+            this.PeriizedRadioButton.AutoSize = true;
+            this.PeriizedRadioButton.Location = new System.Drawing.Point(7, 40);
+            this.PeriizedRadioButton.Name = "PeriizedRadioButton";
+            this.PeriizedRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.PeriizedRadioButton.TabIndex = 1;
+            this.PeriizedRadioButton.Text = "Pearlized";
+            this.PeriizedRadioButton.UseVisualStyleBackColor = true;
+            this.PeriizedRadioButton.CheckedChanged += new System.EventHandler(this.PeriizedRadioButton_CheckedChanged);
+            // 
             // StandardRadioButton
             // 
             this.StandardRadioButton.AutoSize = true;
@@ -265,26 +290,11 @@
             this.StandardRadioButton.TabStop = true;
             this.StandardRadioButton.Text = "Standard";
             this.StandardRadioButton.UseVisualStyleBackColor = true;
+            this.StandardRadioButton.CheckedChanged += new System.EventHandler(this.StandardRadioButton_CheckedChanged);
             // 
-            // PeriizedRadioButton
+            // printDialog1
             // 
-            this.PeriizedRadioButton.AutoSize = true;
-            this.PeriizedRadioButton.Location = new System.Drawing.Point(7, 40);
-            this.PeriizedRadioButton.Name = "PeriizedRadioButton";
-            this.PeriizedRadioButton.Size = new System.Drawing.Size(68, 17);
-            this.PeriizedRadioButton.TabIndex = 1;
-            this.PeriizedRadioButton.Text = "Pearlized";
-            this.PeriizedRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // CustomRadioButton
-            // 
-            this.CustomRadioButton.AutoSize = true;
-            this.CustomRadioButton.Location = new System.Drawing.Point(7, 63);
-            this.CustomRadioButton.Name = "CustomRadioButton";
-            this.CustomRadioButton.Size = new System.Drawing.Size(60, 17);
-            this.CustomRadioButton.TabIndex = 2;
-            this.CustomRadioButton.Text = "Custom";
-            this.CustomRadioButton.UseVisualStyleBackColor = true;
+            this.printDialog1.UseEXDialog = true;
             // 
             // SharpAutoSaleForm
             // 
@@ -348,6 +358,7 @@
         private System.Windows.Forms.RadioButton CustomRadioButton;
         private System.Windows.Forms.RadioButton PeriizedRadioButton;
         private System.Windows.Forms.RadioButton StandardRadioButton;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 

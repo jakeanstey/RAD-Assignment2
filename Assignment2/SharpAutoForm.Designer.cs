@@ -54,6 +54,7 @@
             this.PeriizedRadioButton = new System.Windows.Forms.RadioButton();
             this.StandardRadioButton = new System.Windows.Forms.RadioButton();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.AdditionalItemsGroupBox.SuspendLayout();
             this.ExteriorFinishGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -296,11 +297,20 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Location = new System.Drawing.Point(103, 21);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.ErrorLabel.TabIndex = 19;
+            // 
             // SharpAutoSaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 266);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.ExteriorFinishGroupBox);
             this.Controls.Add(this.AdditionalItemsGroupBox);
             this.Controls.Add(this.ExitButton);
@@ -359,6 +369,7 @@
         private System.Windows.Forms.RadioButton PeriizedRadioButton;
         private System.Windows.Forms.RadioButton StandardRadioButton;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }
 

@@ -36,7 +36,10 @@ namespace Assignment2
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-
+            if (Validate(BasePriceTextBox) && Validate(TradeInAllowanceTextBox) && Validate(AdditionalOptionsTextBox))
+            {
+                Calculate();
+            }
         }
 
         private void StandardRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -81,9 +84,34 @@ namespace Assignment2
         /// Validates all of the fields on the form for correct values.
         /// </summary>
         /// <returns></returns>
-        private bool ValidateForm()
+        private bool Validate(TextBox textBox)
         {
+            if(textBox.Text != "")
+            {
+                try
+                {
+                    Convert.ToDouble(textBox);
+                }
+                catch(Exception)
+                {
+                    ResetAndFocusTextBox(textBox);
+                    ErrorLabel.Text = textBox.Name + " must be a number.";
+                    return false;
+                }
+            }else
+            {
+                ResetAndFocusTextBox(textBox);
+                ErrorLabel.Text = textBox.Name + " must not be empty";
+                return false;
+            }
             return true;
+        }
+
+        private void ResetAndFocusTextBox(TextBox textBox)
+        {
+            textBox.Text = "0";
+            textBox.SelectAll();
+            textBox.Focus();
         }
     }
 }

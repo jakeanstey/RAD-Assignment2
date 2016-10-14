@@ -55,8 +55,21 @@
             this.StandardRadioButton = new System.Windows.Forms.RadioButton();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.Menu = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CalculateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClearMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FontDialog = new System.Windows.Forms.FontDialog();
+            this.ColorDialog = new System.Windows.Forms.ColorDialog();
             this.AdditionalItemsGroupBox.SuspendLayout();
             this.ExteriorFinishGroupBox.SuspendLayout();
+            this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePriceTextBox
@@ -77,6 +90,7 @@
             // 
             this.AdditionalOptionsTextBox.Location = new System.Drawing.Point(106, 90);
             this.AdditionalOptionsTextBox.Name = "AdditionalOptionsTextBox";
+            this.AdditionalOptionsTextBox.ReadOnly = true;
             this.AdditionalOptionsTextBox.Size = new System.Drawing.Size(100, 20);
             this.AdditionalOptionsTextBox.TabIndex = 2;
             // 
@@ -84,6 +98,7 @@
             // 
             this.SubTotalTextBox.Location = new System.Drawing.Point(106, 117);
             this.SubTotalTextBox.Name = "SubTotalTextBox";
+            this.SubTotalTextBox.ReadOnly = true;
             this.SubTotalTextBox.Size = new System.Drawing.Size(100, 20);
             this.SubTotalTextBox.TabIndex = 3;
             // 
@@ -91,6 +106,7 @@
             // 
             this.SalesTaxTextBox.Location = new System.Drawing.Point(106, 144);
             this.SalesTaxTextBox.Name = "SalesTaxTextBox";
+            this.SalesTaxTextBox.ReadOnly = true;
             this.SalesTaxTextBox.Size = new System.Drawing.Size(100, 20);
             this.SalesTaxTextBox.TabIndex = 4;
             // 
@@ -98,6 +114,7 @@
             // 
             this.TotalTextBox.Location = new System.Drawing.Point(106, 171);
             this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(100, 20);
             this.TotalTextBox.TabIndex = 5;
             // 
@@ -105,6 +122,7 @@
             // 
             this.AmountDueTextBox.Location = new System.Drawing.Point(106, 198);
             this.AmountDueTextBox.Name = "AmountDueTextBox";
+            this.AmountDueTextBox.ReadOnly = true;
             this.AmountDueTextBox.Size = new System.Drawing.Size(100, 20);
             this.AmountDueTextBox.TabIndex = 6;
             // 
@@ -305,10 +323,93 @@
             this.ErrorLabel.Size = new System.Drawing.Size(0, 13);
             this.ErrorLabel.TabIndex = 19;
             // 
+            // Menu
+            // 
+            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.Menu.Location = new System.Drawing.Point(0, 0);
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(398, 24);
+            this.Menu.TabIndex = 21;
+            this.Menu.Text = "menuStrip2";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExitMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // ExitMenuItem
+            // 
+            this.ExitMenuItem.Name = "ExitMenuItem";
+            this.ExitMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExitMenuItem.Text = "Exit";
+            this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CalculateMenuItem,
+            this.ClearMenuItem,
+            this.FontMenuItem,
+            this.ColorMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // CalculateMenuItem
+            // 
+            this.CalculateMenuItem.Name = "CalculateMenuItem";
+            this.CalculateMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.CalculateMenuItem.Text = "Calculate";
+            this.CalculateMenuItem.Click += new System.EventHandler(this.CalculateMenuItem_Click);
+            // 
+            // ClearMenuItem
+            // 
+            this.ClearMenuItem.Name = "ClearMenuItem";
+            this.ClearMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ClearMenuItem.Text = "Clear";
+            this.ClearMenuItem.Click += new System.EventHandler(this.ClearMenuItem_Click);
+            // 
+            // FontMenuItem
+            // 
+            this.FontMenuItem.Name = "FontMenuItem";
+            this.FontMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.FontMenuItem.Text = "Font";
+            this.FontMenuItem.Click += new System.EventHandler(this.FontMenuItem_Click);
+            // 
+            // ColorMenuItem
+            // 
+            this.ColorMenuItem.Name = "ColorMenuItem";
+            this.ColorMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ColorMenuItem.Text = "Color";
+            this.ColorMenuItem.Click += new System.EventHandler(this.ColorMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // AboutMenuItem
+            // 
+            this.AboutMenuItem.Name = "AboutMenuItem";
+            this.AboutMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.AboutMenuItem.Text = "About";
+            this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
+            // 
             // SharpAutoSaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Assignment2.Properties.Resources.BMW;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(398, 266);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.ExteriorFinishGroupBox);
@@ -330,12 +431,17 @@
             this.Controls.Add(this.AdditionalOptionsTextBox);
             this.Controls.Add(this.TradeInAllowanceTextBox);
             this.Controls.Add(this.BasePriceTextBox);
+            this.Controls.Add(this.Menu);
+            this.DoubleBuffered = true;
             this.Name = "SharpAutoSaleForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sharp Auto Sale";
             this.AdditionalItemsGroupBox.ResumeLayout(false);
             this.AdditionalItemsGroupBox.PerformLayout();
             this.ExteriorFinishGroupBox.ResumeLayout(false);
             this.ExteriorFinishGroupBox.PerformLayout();
+            this.Menu.ResumeLayout(false);
+            this.Menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,6 +476,18 @@
         private System.Windows.Forms.RadioButton StandardRadioButton;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.MenuStrip Menu;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CalculateMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClearMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FontMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ColorMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutMenuItem;
+        private System.Windows.Forms.FontDialog FontDialog;
+        private System.Windows.Forms.ColorDialog ColorDialog;
     }
 }
 
